@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -18,12 +17,15 @@ export class EmployeeDirectoryComponent implements OnInit {
   p:number=1
   totalemployees:any;
   query:string="";
-
+  role:string|null
+  isNotAdmin=true;
+  
   form = new FormGroup({
     search: new FormControl('', [Validators.required])
   })
 
   constructor(private service: AppService,private router:Router) { 
+    this.role=localStorage.getItem("Role");
     this.service.getEmployees().subscribe(data => {
       this.employees = data;
       this.totalemployees=data.length;
@@ -70,11 +72,16 @@ export class EmployeeDirectoryComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('jwtToken');
+    localStorage.removeItem('Role');
     this.router.navigate(['login']);
     }
 
   ngOnInit(): void {
-    console.log("Oninit emp-directory");
+    if(this.role=="admin"){
+        this.isNotAdmin=false
+        this.router.navigate(['directory']);
+    }
+    
   }
 
 }

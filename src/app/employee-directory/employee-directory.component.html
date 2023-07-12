@@ -8,8 +8,10 @@
         <div class="mt-5">
             <div class="container">
                 <div class="top-area">
+                    <div [class.hide]="isNotAdmin">
                     <a href="/add"><button type="button" class="btn btn-primary">Add User</button></a>
-                    <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+                </div>
+                <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
                     <div class="search">
                         <form [formGroup]="form">
                         <input type="text" formControlName="search" placeholder="Search" class="search-input" id="search" name="search" [(ngModel)]="query">
@@ -27,8 +29,13 @@
                       <div class="emp-desig" (click)="viewEmployee(employee.id)">{{employee.designation}}</div>
                       <div class="emp-dept" (click)="viewEmployee(employee.id)">{{employee.department}}</div>
                           <div class="card-buttons">
+                            <div [class.hide]="isNotAdmin">
+                                
                           <button class="view-btn" (click)="updateEmployee(employee.id)">Edit</button>
+                        </div>
+                        <div [class.hide]="isNotAdmin">
                           <button class="delete-btn" (click)="deleteEmployee(employee.id)">Delete</button>
+                        </div>
                           </div>
                       </div>
                   </div>

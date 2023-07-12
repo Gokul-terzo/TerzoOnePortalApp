@@ -20,6 +20,9 @@
     color: gray;
     text-align: center;
 }
+.hide{
+    display: none;
+}
 .emp-cards-area{
     display: flex;
     flex-flow: row wrap;
@@ -41,7 +44,7 @@
 .emp-card{
     cursor: pointer;
     border: 0.2px solid black;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 5px 5px 10px dimgray;
     border-radius: 10px;
     display: flex;
     width: 250px;

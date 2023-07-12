@@ -9,6 +9,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  role!:string;
+  isAdmin:boolean=false;
+
   constructor(private service:AppService,private router:Router){}
   data:any
   jwtToken!:any
@@ -25,9 +28,19 @@ login() {
     console.log(this.jwtToken);
     localStorage.setItem('jwtToken',this.jwtToken);
     console.log(localStorage.getItem('jwtToken'));
-    this.router.navigate(['directory'])
+
+  this.service.getRole(this.data.email).subscribe(response=>{
+    if(response['role']=="ADMIN"||response['role']=="admin"){
+      this.isAdmin=true;
+      localStorage.setItem("Role","admin");
+    }
+  })
+    this.router.navigate(['directory']).then(()=>{
+      window.location.reload();
+    })
     }
   )
+
 }
 
 }

@@ -7,9 +7,14 @@ import { LoginObject } from './LoginObject';
   providedIn: 'root'
 })
 export class AppService {
+ 
     constructor(private http: HttpClient) { }
 
     private url = "http://localhost:8080/";
+
+    getRole(email: string) :Observable<any>{
+      return this.http.get(`${this.url}auth/role/${email}`)
+    }
 
     login(loginCredentials:LoginObject):Observable<any>{
       return this.http.post(`${this.url}auth/login`,loginCredentials)

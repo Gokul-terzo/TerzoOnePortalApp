@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   constructor(private router:Router){}
   empDirectory(){
-    this.router.navigate(['']);
+    this.router.navigate(['directory']);
   }
   timeOff(){
     this.router.navigate(['timeoff']);
