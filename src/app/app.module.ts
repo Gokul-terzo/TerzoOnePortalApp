@@ -4,18 +4,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { EmployeeDriectoryComponent } from './employee-driectory/employee-driectory.component';
+import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EmployeeDriectoryComponent
+    EmployeeDirectoryComponent,
+    ViewEmployeeComponent,
+    UpdateEmployeeComponent,
+    AddEmployeeComponent,
+    UpdateEmployeeComponent,
+    NavbarComponent,
+    DashboardComponent,
+    ApplyTimeoffComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

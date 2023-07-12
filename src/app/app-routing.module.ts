@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployeeDriectoryComponent } from './employee-driectory/employee-driectory.component';
+import { EmployeeDirectoryComponent } from './employee-directory/employee-directory.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { ViewEmployeeComponent } from './view-employee/view-employee.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
 
 const routes: Routes = [
-  { path: '', component: EmployeeDriectoryComponent },
+  { path: '', component: EmployeeDirectoryComponent },
+  { path: 'add', component: AddEmployeeComponent },
+  { path: 'update/:id', component: UpdateEmployeeComponent },
+  { path: 'view/:id', component: ViewEmployeeComponent },
+  {path:'dashboard',component:DashboardComponent},
+  {path:'timeoff',component:ApplyTimeoffComponent}
 ];
 
 @NgModule({

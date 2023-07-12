@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmployeeDriectoryComponent } from './employee-driectory.component';
+import { EmployeeDirectoryComponent } from './employee-directory.component';
 
 describe('EmployeeDriectoryComponent', () => {
-  let component: EmployeeDriectoryComponent;
-  let fixture: ComponentFixture<EmployeeDriectoryComponent>;
+  let component: EmployeeDirectoryComponent;
+  let fixture: ComponentFixture<EmployeeDirectoryComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EmployeeDriectoryComponent]
+      declarations: [EmployeeDirectoryComponent]
     });
-    fixture = TestBed.createComponent(EmployeeDriectoryComponent);
+    fixture = TestBed.createComponent(EmployeeDirectoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

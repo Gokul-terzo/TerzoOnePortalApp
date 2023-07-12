@@ -1,0 +1,98 @@
+*{
+    font-family: "Gill Sans";
+}
+.top-area{
+    display: flex;
+    align-items: center;
+    gap: 900px;
+}
+.search-btn{
+    background-color: rgb(250, 250, 250);
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+.search-img{
+    width: 40px;
+    height: 40px;
+}
+.page-title{
+    color: gray;
+    text-align: center;
+}
+.emp-cards-area{
+    display: flex;
+    flex-flow: row wrap;
+}
+.emp-profile{
+    border-radius: 50%;
+}
+.add-emp{
+    cursor: pointer;
+    font-size: medium;
+    margin-left: 40px;
+    border: none;
+    color: aliceblue;
+    background-color: blue;
+    border-radius: 8px;
+    height: 35px;
+    width: 120px;
+}
+.emp-card{
+    cursor: pointer;
+    border: 0.2px solid black;
+    box-shadow: 5px 5px 10px black;
+    border-radius: 10px;
+    display: flex;
+    width: 250px;
+    height: 270px;
+    margin: 30px;
+    gap: 5px;
+    align-content: center;
+    justify-content: center;
+    padding: 5px;
+}
+.emp-name{
+    font-weight: bold;
+    color:rgb(12, 145, 207);
+}
+.emp-desig{
+    font-weight: normal;
+    color: black;
+}
+.emp-dept{
+    font-weight: lighter;
+    color: dimgray;
+}
+.emp-name,.emp-desig,.emp-logo,.emp-dept{
+    display: flex;
+    justify-content: center;
+}
+.card-buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    gap:50px;
+}
+.view-btn{
+    border: none;
+    color: aliceblue;
+    background-color: limegreen;
+    border-radius: 5px;
+    height: 25px;
+    width: 55px;
+    cursor: pointer;
+}
+.delete-btn{
+    border: none;
+    color: aliceblue;
+    background-color: red;
+    border-radius: 5px;
+    height: 25px;
+    width: 55px;
+    cursor: pointer;
+}
+.pagination{
+    position: relative;
+    margin-bottom: 0px;
+}

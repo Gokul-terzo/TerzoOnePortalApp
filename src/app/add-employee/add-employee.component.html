@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+   
+  
+    <div class="my-5">
+      <div class="mx-auto w-25 " style="max-width:100%;">
+        <h2 class="text-center mb-3">Add User</h2>
+        <form  [formGroup]="form" (ngSubmit)="submit()" >
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input id="name"  formControlName="name" type="text" name="name" class="form-control" placeholder="Name"  required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" type="email"  formControlName="email" name="email" class="form-control"   placeholder="email" required>
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="dob" class="form-label">DOB</label>
+                  <input id="dob" type="date" name="dob"  formControlName="dob" class="form-control"   required>
+                </div>
+              </div>
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="doj" class="form-label">Date Of Joining</label>
+              <input id="doj" type="date" name="doj"  formControlName="doj" class="form-control" required>
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="designation" class="form-label">Desgination</label>
+                  <input id="designation"  formControlName="designation" type="text" name="designation" class="form-control"   placeholder="designation" required>
+                </div>
+              </div>         
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="mobile" class="form-label">Mobile</label>
+              <input id="mobile" type="tel" name="mobile"  formControlName="mobile" class="form-control"   placeholder="mobile" required>
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="department" class="form-label">Department</label>
+                  <input id="department"  formControlName="department" type="text" name="department" class="form-control"  placeholder="department" required>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="status" class="form-label">Status</label>
+                  <input id="status"  formControlName="status" type="text" name="status" class="form-control"   placeholder="status" required>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12 form-group mb-3">
+                  <label for="employeeType" class="form-label">EmployeeType</label>
+                  <input id="employeeType"  formControlName="employeeType" type="text" name="employeeType" class="form-control"  placeholder="employeeType" required>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="team" class="form-label">Team</label>
+                      <input id="team"  formControlName="team" type="text" name="team" class="form-control"  placeholder="" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="team" class="form-label">Work Location</label>
+                      <input id="team"  formControlName="team" type="text" name="team" class="form-control"  placeholder="" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                      <label for="profile" class="form-label">Profile Url</label>
+                      <input id="profile"  formControlName="profileUrl" type="text" name="team" class="form-control" placeholder="" required>
+                    </div>
+                </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input class="btn btn-primary w-100" type="submit" value="Submit">
+            </div>
+          </div>
+
+          
+        </form>
+  
+      </div>
+    </div>
+    
+</body>
+</html>
