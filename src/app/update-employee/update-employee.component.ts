@@ -49,8 +49,8 @@ export class UpdateEmployeeComponent {
       console.log(data)
     })
 
-    this.router.navigate(['/']).then(() => {
+    this.router.navigate(['directory']).then(() => {
       window.location.reload();
-    });;
+    });
   }
 }

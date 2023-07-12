@@ -6,9 +6,11 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
-
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  { path: '', component: EmployeeDirectoryComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
+  {path:'directory',component:EmployeeDirectoryComponent},
   { path: 'add', component: AddEmployeeComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
   { path: 'view/:id', component: ViewEmployeeComponent },

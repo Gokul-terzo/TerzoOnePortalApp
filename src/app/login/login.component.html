@@ -14,14 +14,14 @@
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-4">
                 <h2 class="text-center" id="text-center">Login Form</h2>
-                <form>
+                <form (ngSubmit)="login()" [formGroup]="form">
                     <div class="form-group">
                         <label for="username">Email</label>
-                        <input type="email" class="form-control" id="username" placeholder="Email">
+                        <input type="email" class="form-control" formControlName="email" id="username" placeholder="Email" >
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password" >
                     </div>
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>

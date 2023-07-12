@@ -4,7 +4,7 @@
 .top-area{
     display: flex;
     align-items: center;
-    gap: 900px;
+    gap:50px;
 }
 .search-btn{
     background-color: rgb(250, 250, 250);

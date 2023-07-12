@@ -42,7 +42,7 @@ export class AddEmployeeComponent {
     this.service.addEmployee(this.data).subscribe(data => {
       console.log(data)
     })
-    this.router.navigate(['/']).then(() => {
+    this.router.navigate(['directory']).then(() => {
       window.location.reload();
     });
   }
