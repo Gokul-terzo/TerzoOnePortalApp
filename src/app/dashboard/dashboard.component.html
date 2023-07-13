@@ -8,7 +8,9 @@
     <div class="dashboard-content">
         <div class="combined-section">
             <div class="holidays">
-
+                <div class="holiday" *ngFor="let holiday of holidays">
+                    <div class="day">{{holiday.leavedate}} {{holiday.occasion}}</div>
+                </div>
             </div>
             <div class="timeoff">
 
@@ -18,7 +20,7 @@
             </div>
         </div>
         <div class="birthday-buddies">
-
+            <div *ngFor="let birthday of birthdayBuddies">{{birthday.name}}{{birthday.dob}}</div>
         </div>
         <div class="work-anniversary">
 

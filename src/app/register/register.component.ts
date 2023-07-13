@@ -25,6 +25,7 @@ register(){
   this.service.register(this.data).subscribe(response=>{
     this.jwtToken=response['token'];
 })
-this.router.navigate(['dashboard']);
+let email=localStorage.getItem('email')
+this.router.navigate(['dashboard',email]);
 }
 }

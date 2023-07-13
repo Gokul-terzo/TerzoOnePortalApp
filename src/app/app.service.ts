@@ -66,6 +66,11 @@ export class AppService {
     return this.http.get<EmployeeDetails>(`${this.url}api/dashboard/employee/${email}/get`,{headers})
     }
     
+    getHolidays():Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+    return this.http.get<any[]>(this.url+'api/dashboard/holidays',{headers});
+    }
 
     searchUsers(query:string):Observable<any[]>{
       const jwt=localStorage.getItem('jwtToken');
@@ -73,4 +78,19 @@ export class AppService {
       console.log("In get employee service");
       return this.http.get<any[]>(this.url+`api/employees/search/${query}`,{headers})
     }
+
+    getBirthday():Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+      const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+        console.log("In get birthday service");
+        return this.http.get<any[]>(this.url+`api/dashboard/birthday-buddies`,{headers})
+    }
+
+    getWorkAnniversary():Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+      const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+        console.log("In get work anniversary service");
+        return this.http.get<any[]>(this.url+`api/dashboard/birthday-buddies`,{headers})
+    }
+    
 }
