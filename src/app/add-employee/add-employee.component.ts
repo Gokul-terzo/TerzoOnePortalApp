@@ -26,8 +26,7 @@ export class AddEmployeeComponent {
     employeeType: new FormControl('', [Validators.required]),
     team: new FormControl('', [Validators.required]),
     workLocation: new FormControl('', [Validators.required]),
-    profileUrl: new FormControl('', [Validators.required]),
-
+    profileUrl: new FormControl('', [Validators.required])
   })
 
   ngOnInit(): void {
@@ -42,8 +41,6 @@ export class AddEmployeeComponent {
     this.service.addEmployee(this.data).subscribe(data => {
       console.log(data)
     })
-    this.router.navigate(['directory']).then(() => {
-      window.location.reload();
-    });
+    this.router.navigate(['register']);
   }
 }

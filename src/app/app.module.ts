@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
     UpdateEmployeeComponent,
     NavbarComponent,
     DashboardComponent,
-    ApplyTimeoffComponent
+    ApplyTimeoffComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -46,7 +46,9 @@ export class EmployeeDirectoryComponent implements OnInit {
   }
   
 
-  deleteEmployee(id: number){
+  deleteEmployee(id: number,email:string){
+    localStorage.setItem('email',email);
+    this.service.deleteUser(email);
     this.service.deleteEmployee(id).subscribe(data => {
       this.employees = this.employees?.filter(employee => employee.id !== id);
       setTimeout(()=>{
@@ -71,8 +73,7 @@ export class EmployeeDirectoryComponent implements OnInit {
   }
 
   logout() {
-    localStorage.removeItem('jwtToken');
-    localStorage.removeItem('Role');
+    localStorage.clear();
     this.router.navigate(['login']);
     }
 

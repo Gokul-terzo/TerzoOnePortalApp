@@ -20,6 +20,14 @@ export class AppService {
       return this.http.post(`${this.url}auth/login`,loginCredentials)
     }
 
+    register(registrationCredentials:LoginObject):Observable<any>{
+      return this.http.post(`${this.url}auth/register`,registrationCredentials)
+    }
+
+    deleteUser(email:string):void{
+      this.http.get(`${this.url}auth/delete/${email}`);
+    }
+
     deleteEmployee(id: number): Observable<any>{
         console.log(id);
         const jwt=localStorage.getItem('jwtToken');
@@ -51,6 +59,13 @@ export class AppService {
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`);
       return this.http.put<any>(`${this.url}api/employee/${id}/edit`, employee,{headers});
     }
+
+    getEmployeeByEmail(email: string): Observable<EmployeeDetails>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+    return this.http.get<EmployeeDetails>(`${this.url}api/dashboard/employee/${email}/get`,{headers})
+    }
+    
 
     searchUsers(query:string):Observable<any[]>{
       const jwt=localStorage.getItem('jwtToken');

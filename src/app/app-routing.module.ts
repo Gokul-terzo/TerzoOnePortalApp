@@ -7,6 +7,7 @@ import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent },
@@ -14,8 +15,9 @@ const routes: Routes = [
   { path: 'add', component: AddEmployeeComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
   { path: 'view/:id', component: ViewEmployeeComponent },
-  {path:'dashboard',component:DashboardComponent},
-  {path:'timeoff',component:ApplyTimeoffComponent}
+  {path:'dashboard/:email',component:DashboardComponent},
+  {path:'timeoff',component:ApplyTimeoffComponent},
+  {path:'register',component:RegisterComponent}
 ];
 
 @NgModule({

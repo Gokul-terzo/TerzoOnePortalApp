@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   constructor(private router:Router){}
+  email!:string|null
   empDirectory(){
     this.router.navigate(['directory']);
   }
@@ -15,6 +16,7 @@ export class NavbarComponent {
     this.router.navigate(['timeoff']);
   }
   dashBoard(){
-    this.router.navigate(['dashboard']);
+    this.email=localStorage.getItem('email');
+    this.router.navigate(['dashboard',this.email]);
   }
 }

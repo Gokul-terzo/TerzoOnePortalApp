@@ -6,6 +6,9 @@
     align-items: center;
     gap:50px;
 }
+.container{
+    margin-left: 50px;
+}
 .search-btn{
     background-color: rgb(250, 250, 250);
     width: 30px;
@@ -96,6 +99,6 @@
     cursor: pointer;
 }
 .pagination{
-    position: relative;
+    position: absolute;
     margin-bottom: 0px;
 }

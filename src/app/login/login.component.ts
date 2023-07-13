@@ -3,6 +3,7 @@ import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import { LoginObject } from '../LoginObject';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { tick } from '@angular/core/testing';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,9 @@ export class LoginComponent {
   role!:string;
   isAdmin:boolean=false;
 
-  constructor(private service:AppService,private router:Router){}
+  constructor(private service:AppService,private router:Router){
+    
+  }
   data:any
   jwtToken!:any
   form = new FormGroup({
@@ -35,7 +38,9 @@ login() {
       localStorage.setItem("Role","admin");
     }
   })
-    this.router.navigate(['directory']).then(()=>{
+  console.log(this.data.email);
+  localStorage.setItem('email',this.data.email);
+    this.router.navigate(['dashboard',this.data.email]).then(()=>{
       window.location.reload();
     })
     }

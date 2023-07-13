@@ -11,10 +11,12 @@
 .timeoff-img,.directory-img{
     height: 50px;
     width: 50px;
+    cursor: pointer;
 }
 .dashboard-img{
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 .dashboard-imgholder,.directory-imgholder,.timeoff-imgholder{
     display: flex;

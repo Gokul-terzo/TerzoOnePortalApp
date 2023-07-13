@@ -5,7 +5,6 @@
     </head>
     <body>
         <app-navbar></app-navbar>
-        <div class="mt-5">
             <div class="container">
                 <div class="top-area">
                     <div [class.hide]="isNotAdmin">
@@ -34,15 +33,15 @@
                           <button class="view-btn" (click)="updateEmployee(employee.id)">Edit</button>
                         </div>
                         <div [class.hide]="isNotAdmin">
-                          <button class="delete-btn" (click)="deleteEmployee(employee.id)">Delete</button>
+                          <button class="delete-btn" (click)="deleteEmployee(employee.id,employee.email)">Delete</button>
                         </div>
                           </div>
                       </div>
                   </div>
                   </div>
             </div>
-        </div>
       <div class="pagination">
       <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>   
     </body>
+    </html>
