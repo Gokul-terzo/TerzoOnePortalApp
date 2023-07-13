@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
-import { LoginObject } from '../LoginObject';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { tick } from '@angular/core/testing';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +13,7 @@ export class LoginComponent {
   isAdmin:boolean=false;
 
   constructor(private service:AppService,private router:Router){
-    
+    localStorage.clear();
   }
   data:any
   jwtToken!:any

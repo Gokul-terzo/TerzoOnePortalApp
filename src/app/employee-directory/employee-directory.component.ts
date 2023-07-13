@@ -31,6 +31,7 @@ export class EmployeeDirectoryComponent implements OnInit {
       this.totalemployees=data.length;
     }, error => {
       if (error instanceof HttpErrorResponse && error.status === 403 || error.status ===401) {
+        localStorage.clear();
         this.router.navigate(['']);
       }
     });

@@ -1,3 +1,56 @@
 .content{
-    margin-left: 50px;
+    margin-left: 70px;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* display: flex;
+    flex-direction: column; */
+    height: 100vh;
+    background:linear-gradient(rgb(247, 228, 228),rgb(248, 246, 246),rgb(226, 224, 224));
+}
+.welcome-note{
+    font-size: x-large;
+}
+.dashboard-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.combined-section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:40px;
+}
+.holidays,.timeoff,.upcoming-timeoff{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+.birthday-buddies{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 5px;
+}
+.work-anniversary{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 5px;
+}
+.new-hires{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 5px;
 }

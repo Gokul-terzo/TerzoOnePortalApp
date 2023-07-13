@@ -1,7 +1,7 @@
 .navbar{
     display: flex;
     background-color: rgb(159, 160, 160);
-    height: 100vh;
+    height: 100%;
     width: 50px;
     position: absolute;
     margin-left: 0px;

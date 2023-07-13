@@ -3,6 +3,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { EmployeeDetails } from '../EmployeeDetails';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../app.service';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -19,6 +20,11 @@ export class DashboardComponent {
     this.service.getEmployeeByEmail(email).subscribe(data => {
       this.employee = data
       console.log(this.employee)
-    })
+    }, error => {
+      if (error instanceof HttpErrorResponse && error.status === 403 || error.status ===401) {
+        localStorage.clear();
+        this.router.navigate(['']);
+      }
+    });
   }
 }
