@@ -20,13 +20,17 @@
             </div>
         </div>
         <div class="birthday-buddies">
-            <div *ngFor="let birthday of birthdayBuddies">{{birthday.name}}{{birthday.dob}}</div>
+            <div *ngFor="let birthday of birthdayBuddies">{{birthday.name}} {{birthday.dob}}</div>
         </div>
         <div class="work-anniversary">
-
+            <div class="work-anniversary-buddies" *ngFor="let workAnniversary of workAniversary">
+                {{workAnniversary.name}} {{workAnniversary.doj}}
+            </div>
         </div>
         <div class="new-hires">
-
+            <div class="individual-newhires" *ngFor="let newhire of newHires">
+                {{newhire.name}} {{newhire.doj}}
+            </div>
         </div>
     </div>
 </div>

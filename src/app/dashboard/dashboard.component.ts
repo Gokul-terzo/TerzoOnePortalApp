@@ -16,6 +16,9 @@ export class DashboardComponent {
   data:any
   holidays:any
   birthdayBuddies:any
+  newHires:any
+  workAniversary:any
+
   constructor(private service:AppService, private route:ActivatedRoute, private router:Router){}
   ngOnInit(): void {
     let email = this.route.snapshot.params['email'];
@@ -37,6 +40,16 @@ export class DashboardComponent {
     this.service.getBirthday().subscribe(data=>{
       this.birthdayBuddies=data
       console.log(this.birthdayBuddies);
+    })
+
+    this.service.getNewHires().subscribe(data=>{
+        this.newHires=data
+        console.log(this.newHires);
+    })
+
+    this.service.getWorkAnniversary().subscribe(data=>{
+      this.workAniversary=data
+      console.log("WorkAnniversary",this.workAniversary);
     })
 
   }

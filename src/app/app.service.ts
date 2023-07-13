@@ -90,7 +90,14 @@ export class AppService {
       const jwt=localStorage.getItem('jwtToken');
       const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
         console.log("In get work anniversary service");
-        return this.http.get<any[]>(this.url+`api/dashboard/birthday-buddies`,{headers})
+        return this.http.get<any[]>(this.url+`api/dashboard/work-anniversary`,{headers})
+    }
+
+    getNewHires():Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+      const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+        console.log("In get work anniversary service");
+        return this.http.get<any[]>(this.url+`api/dashboard/new-hires`,{headers})
     }
     
 }
