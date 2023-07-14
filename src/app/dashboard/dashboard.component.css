@@ -8,6 +8,37 @@ body{
     height: 100vh;
     background:linear-gradient(rgb(247, 228, 228),rgb(248, 246, 246),rgb(226, 224, 224));
 }
+.holiday{
+    margin-left: 60px;
+    display: flex;
+    width: 70%;
+    gap:60px;
+    border-bottom: 2px  solid rgb(169, 165, 165);
+    font-size: large;
+}
+.newhires-holder{
+    display: flex;
+    gap:20px;
+}
+.bd-header{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    margin-left: 20px;
+}
+.holidays-header{
+    margin-left: 20px;
+    margin-top:10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap:30px;
+}
+.header-text{
+    font-size: larger;
+    font-weight: bold;
+    color:dimgray
+}
 .welcome-note{
     font-size: x-large;
 }

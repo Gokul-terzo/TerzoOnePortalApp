@@ -18,6 +18,9 @@ export class DashboardComponent {
   birthdayBuddies:any
   newHires:any
   workAniversary:any
+  bdBuddiesLength!:number
+  workAnniversaryLength!:number
+  newHiresLength!: number;
 
   constructor(private service:AppService, private route:ActivatedRoute, private router:Router){}
   ngOnInit(): void {
@@ -39,16 +42,19 @@ export class DashboardComponent {
 
     this.service.getBirthday().subscribe(data=>{
       this.birthdayBuddies=data
+      this.bdBuddiesLength=this.birthdayBuddies.length;
       console.log(this.birthdayBuddies);
     })
 
     this.service.getNewHires().subscribe(data=>{
         this.newHires=data
+        this.newHiresLength=this.newHires.length;
         console.log(this.newHires);
     })
 
     this.service.getWorkAnniversary().subscribe(data=>{
       this.workAniversary=data
+      this.workAnniversaryLength=this.workAniversary.length;
       console.log("WorkAnniversary",this.workAniversary);
     })
 

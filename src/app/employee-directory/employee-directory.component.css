@@ -102,3 +102,19 @@
     position: absolute;
     margin-bottom: 0px;
 }
+
+.sort-dept-btn,.sort-name-btn{
+    cursor: pointer;
+    font-size: medium;
+    margin-left: 10px;
+    border: none;
+    color: aliceblue;
+    background-color: rgb(24, 76, 5);
+    border-radius: 8px;
+    height: 35px;
+    width: 150px;
+}
+.opt{
+    border-radius: 5px;
+    border: 1px solid gray;
+}

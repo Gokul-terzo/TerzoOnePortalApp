@@ -10,7 +10,7 @@ import { AppService } from '../app.service';
 })
 export class ViewEmployeeComponent {
 
-  employee?: EmployeeDetails
+  employee!: EmployeeDetails
   data:any
 
   constructor(private service:AppService, private route:ActivatedRoute, private router:Router){}

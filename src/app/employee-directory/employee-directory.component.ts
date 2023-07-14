@@ -17,11 +17,21 @@ export class EmployeeDirectoryComponent implements OnInit {
   p:number=1
   totalemployees:any;
   query:string="";
+  dept:string="";
   role:string|null
   isNotAdmin=true;
+  name:string=""
   
   form = new FormGroup({
     search: new FormControl('', [Validators.required])
+  })
+
+  form1 = new FormGroup({
+    dept: new FormControl('', [Validators.required])
+  })
+
+  form2 = new FormGroup({
+    name: new FormControl('', [Validators.required])
   })
 
   constructor(private service: AppService,private router:Router) { 
@@ -71,6 +81,18 @@ export class EmployeeDirectoryComponent implements OnInit {
       this.employees = data;
     })
   }
+  }
+
+  sortDept(){
+    this.service.sortDept(this.dept).subscribe(data=>{
+      this.employees=data;
+    })
+  }
+  
+  sortName(){
+    this.service.sortName(this.name).subscribe(data=>{
+      this.employees=data;
+    })
   }
 
   logout() {

@@ -11,12 +11,31 @@
                     <a href="/add"><button type="button" class="btn btn-primary">Add User</button></a>
                 </div>
                 <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
-                    <div class="search">
-                        <form [formGroup]="form">
-                        <input type="text" formControlName="search" placeholder="Search" class="search-input" id="search" name="search" [(ngModel)]="query">
-                        <button (click)="searchUser()" class="search-btn"><img class="search-img" src="https://static.vecteezy.com/system/resources/previews/015/337/677/non_2x/transparent-search-icon-free-png.png"></button>
+                   
+                    <div class="sort-dept">
+                      <form [formGroup]="form1">
+                        <select [(ngModel)]="dept" name="sortdept" formControlName="dept">
+                          <option value="ascending" class="opt">Ascending</option>
+                          <option value="descending" class="opt">Descending</option>
+                        </select>
+                        <button (click)="sortDept()" class="sort-dept-btn">Sort by department</button>
                     </form>
                     </div>
+                    <div class="sort-name">
+                      <form [formGroup]="form2">
+                        <select [(ngModel)]="name" name="sortname" formControlName="name">
+                          <option value="ascending" class="opt">Ascending</option>
+                          <option value="descending" class="opt">Descending</option>
+                        </select>
+                        <button (click)="sortName()" class="sort-name-btn">Sort by name</button>
+                    </form>
+                    </div>
+                    <div class="search">
+                      <form [formGroup]="form">
+                      <input type="text" formControlName="search" placeholder="Search" class="search-input" id="search" name="search" [(ngModel)]="query">
+                      <button (click)="searchUser()" class="search-btn"><img class="search-img" src="https://static.vecteezy.com/system/resources/previews/015/337/677/non_2x/transparent-search-icon-free-png.png"></button>
+                  </form>
+                  </div>
                 </div>
                 <div class="emp-cards-area">
                   <div class="emp-card" *ngFor="let employee of employees | paginate: { itemsPerPage: 8, currentPage: p }">

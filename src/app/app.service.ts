@@ -99,5 +99,17 @@ export class AppService {
         console.log("In get work anniversary service");
         return this.http.get<any[]>(this.url+`api/dashboard/new-hires`,{headers})
     }
+
+    sortDept(query:string):Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any[]>(this.url+`api/employees/sort-by-department/${query}`,{headers})
+    }
+
+    sortName(query:string):Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any[]>(this.url+`api/employees/sort-by-name/${query}`,{headers})
+    }
     
 }

@@ -8,8 +8,17 @@
     <div class="dashboard-content">
         <div class="combined-section">
             <div class="holidays">
+                <div class="holidays-header">
+                    <div class="calendar-logo">
+                        <img src="https://static.vecteezy.com/system/resources/previews/010/160/988/original/calendar-icon-sign-symbol-design-free-png.png" height="50px" width="50px">
+                    </div>
+                    <div class="header-text">
+                        Upcoming Holidays
+                    </div>
+                </div>
                 <div class="holiday" *ngFor="let holiday of holidays">
-                    <div class="day">{{holiday.leavedate}} {{holiday.occasion}}</div>
+                    <div class="date">{{holiday.leavedate}} </div>
+                    <div class="occasion">{{holiday.occasion}}</div>
                 </div>
             </div>
             <div class="timeoff">
@@ -20,17 +29,32 @@
             </div>
         </div>
         <div class="birthday-buddies">
-            <div *ngFor="let birthday of birthdayBuddies">{{birthday.name}} {{birthday.dob}}</div>
+            <div class="bd-header">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/26/Party_Popper_Emojipedia.png" width="70px" height="60px">
+                <div class="header-text">
+                    Birthday Buddies({{bdBuddiesLength}})
+                </div>
+                <div class="small-text">
+                        Next 7 days
+                </div>
+            </div>
+            <div class="bd-buddies-container">
+            <div class="bd-buddy" *ngFor="let birthday of birthdayBuddies">{{birthday.name}} {{birthday.dob}}</div>
+        </div>
         </div>
         <div class="work-anniversary">
+            <div class="header-text">Work Anniversaries({{workAnniversaryLength}})</div>
             <div class="work-anniversary-buddies" *ngFor="let workAnniversary of workAniversary">
                 {{workAnniversary.name}} {{workAnniversary.doj}}
             </div>
         </div>
         <div class="new-hires">
+            <div class="header-text">New Hires({{newHiresLength}})</div>
+            <div class="newhires-holder">
             <div class="individual-newhires" *ngFor="let newhire of newHires">
                 {{newhire.name}} {{newhire.doj}}
             </div>
+        </div>
         </div>
     </div>
 </div>
