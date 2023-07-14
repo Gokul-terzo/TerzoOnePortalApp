@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
 import { RegisterComponent } from './register/register.component';
+import { ApproveTimeoffComponent } from './approve-timeoff/approve-timeoff.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { RegisterComponent } from './register/register.component';
     NavbarComponent,
     DashboardComponent,
     ApplyTimeoffComponent,
-    RegisterComponent
+    RegisterComponent,
+    ApproveTimeoffComponent
   ],
   imports: [
     BrowserModule,

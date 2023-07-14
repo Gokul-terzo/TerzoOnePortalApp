@@ -24,8 +24,8 @@ export class AppService {
       return this.http.post(`${this.url}auth/register`,registrationCredentials)
     }
 
-    deleteUser(email:string):void{
-      this.http.get(`${this.url}auth/delete/${email}`);
+    deleteUser(email:string):Observable<any>{
+      return this.http.get(`${this.url}auth/delete/${email}`);
     }
 
     deleteEmployee(id: number): Observable<any>{

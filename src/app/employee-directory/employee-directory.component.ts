@@ -59,7 +59,9 @@ export class EmployeeDirectoryComponent implements OnInit {
 
   deleteEmployee(id: number,email:string){
     localStorage.setItem('email',email);
-    this.service.deleteUser(email);
+    this.service.deleteUser(email).subscribe(data=>{
+      console.log(this.data);
+    });
     this.service.deleteEmployee(id).subscribe(data => {
       this.employees = this.employees?.filter(employee => employee.id !== id);
       setTimeout(()=>{

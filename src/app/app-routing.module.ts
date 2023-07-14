@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyTimeoffComponent } from './apply-timeoff/apply-timeoff.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ApproveTimeoffComponent } from './approve-timeoff/approve-timeoff.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'view/:id', component: ViewEmployeeComponent },
   {path:'dashboard/:email',component:DashboardComponent},
   {path:'timeoff',component:ApplyTimeoffComponent},
-  {path:'register',component:RegisterComponent}
+  {path:'register',component:RegisterComponent},
+  {path:'approve-timeoff',component:ApproveTimeoffComponent}
 ];
 
 @NgModule({
