@@ -21,3 +21,6 @@
 .dashboard-imgholder,.directory-imgholder,.timeoff-imgholder{
     display: flex;
 }
+.isAdmin{
+    display: none;
+}

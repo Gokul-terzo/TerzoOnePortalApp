@@ -12,6 +12,11 @@
             <div class="directory-imgholder" (click)="empDirectory()">
                 <img src="https://icons.veryicon.com/png/o/miscellaneous/employee-channel-app-icon/employee-channel-app-recommender.png" class="directory-img">
             </div>
+            <div [class.isAdmin]="!isAdmin">
+            <div class="approve-imgholder" (click)="approveTimeOff()">
+                <img src="https://clipground.com/images/approval-icon-png-1.png" class="directory-img">
+            </div>
+        </div>
         </div>
     </body>
 </html>

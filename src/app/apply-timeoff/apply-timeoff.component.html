@@ -1,3 +1,48 @@
+<html>
+    <head>
 
+    </head>
+    <body>
 <app-navbar></app-navbar>
-<p>apply-timeoff works!</p>
+<div class="apply-time-off-content">
+    <div class="apply-timeoff-header">
+        Apply Timeoff
+    </div>
+    <div class="personal-info">
+        <div class="profile">
+            <img [src]="employee.profileUrl" width="70px" height="70px" class="profile-img">
+        </div>
+        <div class="name-email">
+        <div class="name">
+            {{employee.name}}(Me)
+        </div>
+        <div class="email">
+            {{employee.email}}
+        </div>
+        </div>
+    </div>
+    <div class="time-off-period">
+        <form>
+            <label for="select-period">Select Time off period</label><br><br>
+            <input type="date" id="select-period" >
+        </form>
+    </div>
+    <div class="time-off-type">
+        Select Time Off Type<span>(All balance in days)</span>
+        <form>
+            <input type="button" value="Earned">
+            <input type="button" value="Sick">
+            <input type="button" value="Paternity">
+        </form>
+    </div>
+    <div class="leave-note">
+        <p>Add a note</p>
+        <textarea name="leave-note" id="note" cols="50" rows="5"></textarea>
+    </div>
+    <div class="bottom-btn-area">
+    <button class="cancel-leave">Cancel</button>
+    <button class="submit-btn-leave" (click)="applyLeave(employee)">Apply Timeoff</button>
+</div>
+</div>
+</body>
+</html>

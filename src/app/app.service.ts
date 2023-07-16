@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { EmployeeDetails } from './EmployeeDetails';
 import { LoginObject } from './LoginObject';
+import { TimeOff } from './TimeOff';
 @Injectable({
   providedIn: 'root'
 })
@@ -32,13 +33,13 @@ export class AppService {
         console.log(id);
         const jwt=localStorage.getItem('jwtToken');
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
-        return this.http.delete<any>(`${this.url}api/employee/${id}/delete`,{headers});
+        return this.http.delete<any>(`${this.url}api/admin/employee/${id}/delete`,{headers});
       }
 
       addEmployee(user: EmployeeDetails){
         const jwt=localStorage.getItem('jwtToken');
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
-        return this.http.post<EmployeeDetails>(`${this.url}api/employee/new`,user,{headers})
+        return this.http.post<EmployeeDetails>(`${this.url}api/admin/employee/new`,user,{headers})
       }
 
     getEmployees(): Observable<any[]>{
@@ -57,7 +58,7 @@ export class AppService {
     updateEmployee(id?: number ,employee?: EmployeeDetails): Observable<any>{
       const jwt=localStorage.getItem('jwtToken');
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`);
-      return this.http.put<any>(`${this.url}api/employee/${id}/edit`, employee,{headers});
+      return this.http.put<any>(`${this.url}api/admin/employee/${id}/edit`, employee,{headers});
     }
 
     getEmployeeByEmail(email: string): Observable<EmployeeDetails>{
@@ -110,6 +111,12 @@ export class AppService {
       const jwt=localStorage.getItem('jwtToken');
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
       return this.http.get<any[]>(this.url+`api/employees/sort-by-name/${query}`,{headers})
+    }
+
+    applyLeave(leaveDetails:TimeOff):Observable<any>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.post<any>(this.url+`api/time-off/apply-leave`,leaveDetails,{headers})
     }
     
 }

@@ -7,7 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private router:Router){}
+  isAdmin=false
+  constructor(private router:Router){
+    if(localStorage.getItem("Role")=="admin")
+    this.isAdmin=true
+  }
   email!:string|null
   empDirectory(){
     this.router.navigate(['directory']);
@@ -18,5 +22,8 @@ export class NavbarComponent {
   dashBoard(){
     this.email=localStorage.getItem('email');
     this.router.navigate(['dashboard',this.email]);
+  }
+  approveTimeOff(){
+    this.router.navigate(['approve-timeoff']);
   }
 }
