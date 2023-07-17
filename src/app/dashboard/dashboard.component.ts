@@ -4,6 +4,7 @@ import { EmployeeDetails } from '../EmployeeDetails';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../app.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TimeOff } from '../TimeOff';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DashboardComponent {
 
-  employee?: EmployeeDetails
+  applyTimeOff: TimeOff = new TimeOff();
+  employee!: EmployeeDetails
   data:any
   holidays:any
   birthdayBuddies:any
@@ -21,19 +23,29 @@ export class DashboardComponent {
   bdBuddiesLength!:number
   workAnniversaryLength!:number
   newHiresLength!: number;
+  date!:Date
+  type!:string
+  appliedLeaves:any
 
-  constructor(private service:AppService, private route:ActivatedRoute, private router:Router){}
-  ngOnInit(): void {
+  constructor(private service:AppService, private route:ActivatedRoute, private router:Router){
     let email = this.route.snapshot.params['email'];
     this.service.getEmployeeByEmail(email).subscribe(data => {
       this.employee = data
       console.log(this.employee)
+      this.service.empAppliedLeave(this.employee.id).subscribe(data=>{
+        console.log("In get applied leaves");
+        this.appliedLeaves=data
+        console.log("Applied leaves",this.appliedLeaves);
+      })
     }, error => {
       if (error instanceof HttpErrorResponse && error.status === 403 || error.status ===401) {
         localStorage.clear();
         this.router.navigate(['']);
       }
     });
+  }
+  ngOnInit(): void {
+   
 
     this.service.getHolidays().subscribe(data=>{
       this.holidays=data
@@ -58,5 +70,16 @@ export class DashboardComponent {
       console.log("WorkAnniversary",this.workAniversary);
     })
 
+    
+
+  }
+
+  applyLeave(emp:EmployeeDetails){
+    this.applyTimeOff.employee=emp
+    this.applyTimeOff.leaveDate=this.date
+    this.applyTimeOff.leaveType=this.type
+    this.service.applyLeave(this.applyTimeOff).subscribe(data=>{  
+      window.alert("Leave applied!") 
+    })
   }
 }

@@ -88,3 +88,9 @@ body{
     background-color: white;
     border-radius: 5px;
 }
+
+.timeoff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

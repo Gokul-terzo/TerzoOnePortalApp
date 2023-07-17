@@ -4,7 +4,7 @@
     <body>
         <app-navbar></app-navbar>
 <div class="content">
- <p class="welcome-note">Hi, {{employee?.name}}</p>
+ <p class="welcome-note">Hi, {{employee.name}}</p>
     <div class="dashboard-content">
         <div class="combined-section">
             <div class="holidays">
@@ -22,10 +22,30 @@
                 </div>
             </div>
             <div class="timeoff">
-
+                <div class="timeoff-header">
+                    Apply TimeOff
+                </div>
+                <br>
+                <form>
+                    <input type="date" name="timeoff-date" [(ngModel)]="date" required>
+                    <br> <br>
+                    <select name="leave-type" [(ngModel)]="type">
+                        <option value="Sick">Sick</option>
+                        <option value="Earned">Earned</option>
+                        <option value="Paternity">Paternity</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button (click)="applyLeave(employee)">Apply TimeOff</button>
+                </form>
             </div>
             <div class="upcoming-timeoff">
-
+                <div class="upcoming-header">
+                    Upcoming Time-Off
+                </div>
+                <div *ngFor="let leave of appliedLeaves" class="ind-leaves">
+                    {{leave.leaveDate}} {{leave.approved}}
+                </div>
             </div>
         </div>
         <div class="birthday-buddies">

@@ -136,5 +136,12 @@ export class AppService {
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
       return this.http.get<any>(this.url+`api/time-off/admin/approve-leave/${leaveId}`,{headers})
     }
+
+    empAppliedLeave(empId:number):Observable<any[]>{
+      console.log("In get applied leaves");
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any[]>(this.url+`api/time-off/my-applied-leave/${empId}`,{headers})
+    }
     
 }

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 60px;
-    align-items: center;  
+    align-items: center; 
     width: 100%; 
 }
 h2{
@@ -24,4 +24,5 @@ body{
 }
 table{
     align-items: center;
+    border: 1px solid rgb(180, 180, 180);
 }
