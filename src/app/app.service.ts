@@ -118,5 +118,11 @@ export class AppService {
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
       return this.http.post<any>(this.url+`api/time-off/apply-leave`,leaveDetails,{headers})
     }
+
+    getRemainingLeaves(empId:number):Observable<any>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any>(this.url+`api/time-off/leave-balance/${empId}`,{headers})
+    }
     
 }

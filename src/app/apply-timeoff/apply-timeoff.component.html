@@ -24,20 +24,20 @@
     <div class="time-off-period">
         <form>
             <label for="select-period">Select Time off period</label><br><br>
-            <input type="date" id="select-period" >
+            <input type="date" id="select-period" name="time-off-date" [(ngModel)]="date">
         </form>
     </div>
     <div class="time-off-type">
         Select Time Off Type<span>(All balance in days)</span>
         <form>
-            <input type="button" value="Earned">
-            <input type="button" value="Sick">
-            <input type="button" value="Paternity">
+            <input type="button" value="{{'Earned '+Leaves.earnedLeave}}"  (click)="earnedLeave()">
+            <input type="button" value="{{'Sick '+Leaves.medicalLeave}}" (click)="sickLeave()">
+            <input type="button" value="{{'Paternity '+Leaves.paternityLeave}}" (click)="paternityLeave()">
         </form>
     </div>
     <div class="leave-note">
         <p>Add a note</p>
-        <textarea name="leave-note" id="note" cols="50" rows="5"></textarea>
+        <textarea name="leave-note" id="note" cols="50" rows="5" [(ngModel)]="note"></textarea>
     </div>
     <div class="bottom-btn-area">
     <button class="cancel-leave">Cancel</button>
