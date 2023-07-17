@@ -1,0 +1,27 @@
+.approve-time-off-content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    align-items: center;  
+    width: 100%; 
+}
+h2{
+    color: dimgray;
+}
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.individual-applied-leaves{
+    display: flex;
+    gap:20px;
+}
+.applied-leaves-content{
+    margin-bottom:20px;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    gap: 10px;
+}
+table{
+    align-items: center;
+}

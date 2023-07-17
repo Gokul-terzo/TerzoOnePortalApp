@@ -4,6 +4,35 @@
     </head>
     <body>
         <app-navbar></app-navbar>
-<p>approve-timeoff works!</p>
+        <div class="approve-time-off-content">
+            <h2>Applied leaves</h2>
+            <div class="applied-leaves-content">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Note</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let leaveApplied of LeavesApplied">
+                        <td>{{leaveApplied.employee.id}}</td>
+                        <td>{{leaveApplied.employee.email}}</td>
+                        <td>{{leaveApplied.leaveDate}}</td>
+                        <td>{{leaveApplied.leaveType}}</td>
+                        <td>{{leaveApplied.note}}</td>
+                        <td>
+                          <button (click)="approveLeave(leaveApplied.id)">Approve</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>
+        </div>  
 </body>
 </html>

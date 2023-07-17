@@ -40,7 +40,7 @@
         <textarea name="leave-note" id="note" cols="50" rows="5" [(ngModel)]="note"></textarea>
     </div>
     <div class="bottom-btn-area">
-    <button class="cancel-leave">Cancel</button>
+    <button class="cancel-leave" (click)="cancel()">Cancel</button>
     <button class="submit-btn-leave" (click)="applyLeave(employee)">Apply Timeoff</button>
 </div>
 </div>

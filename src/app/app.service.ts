@@ -124,5 +124,17 @@ export class AppService {
     const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
       return this.http.get<any>(this.url+`api/time-off/leave-balance/${empId}`,{headers})
     }
+
+    getAppliedLeaves():Observable<any[]>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any[]>(this.url+`api/time-off/admin/view-applied-leaves`,{headers})
+    }
+
+    approveLeave(leaveId:number):Observable<any>{
+      const jwt=localStorage.getItem('jwtToken');
+    const headers=new HttpHeaders().set('Authorization',`Bearer ${jwt}`)
+      return this.http.get<any>(this.url+`api/time-off/admin/approve-leave/${leaveId}`,{headers})
+    }
     
 }

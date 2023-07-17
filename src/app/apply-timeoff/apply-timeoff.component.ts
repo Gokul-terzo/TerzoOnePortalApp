@@ -55,4 +55,8 @@ paternityLeave(){
       window.alert("Leave applied!") 
     })
   }
+
+  cancel(){
+    this.router.navigate(['dashboard',this.email])
+  }
 }
